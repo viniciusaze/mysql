@@ -40,7 +40,42 @@ VALUES
 ('Valmir', '1970-01-18', 'M', '85', '1.80', DEFAULT),
 ('Patrícia', '1971-02-11', 'F', '84.3', '1.73', DEFAULT);
 
+# ADICIONAR COLUNA ------------------------------------------------------------
 
-SELECT * FROM pessoas;
+ALTER TABLE pessoas
+ADD COLUMN profissao VARCHAR(10);
+
+# REMOVER COLUNA ---------------------------------------------------------------
+
+ALTER TABLE pessoas
+DROP COLUMN profissao;
+
+# ESCOLHENDO A POSIÇÃO DA NOVA COLUNA ------------------------------------------
+
+ALTER TABLE pessoas
+ADD COLUMN profissao VARCHAR(10) AFTER nome; # PARA COLOCAR EM PRIMEIRO, USAR O COMANDO FIRST
+
+# ALTERANDO A COLUNA -----------------------------------------------------------
+
+ALTER TABLE pessoas
+MODIFY COLUMN profissao VARCHAR(20);
+
+# ALTERANDO O NOME DA COLUNA ---------------------------------------------------
+
+ALTER TABLE pessoas
+CHANGE COLUMN profissao prof VARCHAR(20);
+
+# RENOMEANDO TABELA ------------------------------------------------------------
+
+ALTER TABLE pessoas
+RENAME TO gafanhotos;
+
+# DESCREVENDO A TABELA ---------------------------------------------------------
+
+DESCRIBE gafanhotos;
+
+# SELECIONANDO TODOS OS ITENS DA TABELA ----------------------------------------
+
+SELECT * FROM gafanhotos;
 
 
