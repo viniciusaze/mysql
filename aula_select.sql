@@ -29,3 +29,50 @@ where carga > 35 and totaulas < 30;
 
 select nome, carga, totaulas from cursos
 where carga > 35 or totaulas < 30;
+
+# SELEÇÃO POR NOME ----------------------------------------------
+select * from cursos
+where nome = 'PHP';
+
+select * from cursos
+where nome like 'P%' # % Substitui NENHUM ou VARIOS caracteres
+order by idcurso;
+
+select * from cursos
+where nome like '%A';
+
+select * from cursos
+where nome like '%A%';
+
+select * from cursos
+where nome not like '%A%';
+
+select * from cursos
+where nome like 'PH%P%';
+
+select * from cursos
+where nome like 'PH%P_'; # _ exige que tenha um caracatere
+
+select * from gafanhotos
+where nome like '%Silva';
+
+# DISTINGUINDO ---------------------------------------------------
+select distinct carga from cursos;
+
+select distinct nacionalidade from gafanhotos
+order by nacionalidade;
+
+# AGREGAÇÃO ------------------------------------------------------
+select count(nome) from cursos;
+
+select count(*) from cursos
+where carga > 40;
+
+select max(carga) from cursos where ano = '2015';
+
+select min(totaulas) from cursos where ano = '2016';
+
+select sum(totaulas) from cursos where ano = '2016';
+
+select avg(totaulas) from cursos where ano = '2016';
+
