@@ -76,3 +76,38 @@ select sum(totaulas) from cursos where ano = '2016';
 
 select avg(totaulas) from cursos where ano = '2016';
 
+# AGRUPANDO -----------------------------------------------------
+select carga from cursos
+group by carga;
+
+# AGRUPANDO e AGREGANDO -----------------------------------------
+select carga, count(nome) from cursos
+group by carga;
+
+select totaulas, count(*) from cursos
+group by totaulas
+order by count(*) desc;
+
+select carga, count(*) from cursos 
+where totaulas = 30
+group by carga;
+
+select carga, count(nome) from cursos
+group by carga
+having count(nome) > 3;
+
+select ano, count(*) from cursos
+where totaulas > 30
+group by ano
+having ano > 2013
+order by count(*) desc; # Só usar o having no campo agrupado, no caso ano
+
+select avg(carga) from cursos;
+
+select carga, count(*) from cursos
+where ano > 2015
+group by carga
+having carga > (select avg(carga) from cursos);
+
+
+
