@@ -1,4 +1,4 @@
-# RELACIONANDO TABELAS --------------------------------
+# RELACIONANDO TABELAS 1 para muitos -------------------
 desc gafanhotos;
 desc cursos;
 
